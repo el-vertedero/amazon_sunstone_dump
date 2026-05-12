@@ -1,0 +1,30 @@
+# Copyright (C) 2012-2021 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+on charger && property:ro.boot.mdump=1 && property:ro.debuggable=1
+    setprop vendor.debug.mdump 1
+    write /proc/sys/vm/min_free_kbytes 32768
+    trigger early-fs
+    trigger fs
+    trigger post-fs
+    trigger late-fs
+    trigger post-fs-data
+
+#ramdump handling service
+service dump-ramdump /vendor/bin/dump-ramdump.sh
+    disabled
+    user system
+    group root system
+    oneshot
+
+on defaultcrypto && property:vendor.debug.mdump=1
+   stop camerahalserver
+   start dump-ramdump
+
+on nonencrypted && property:vendor.debug.mdump=1
+   stop camerahalserver
+   start dump-ramdump
+

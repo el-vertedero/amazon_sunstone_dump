@@ -1,0 +1,205 @@
+# MTK project .rc configure
+import /vendor/etc/init/hw/init.mdump.rc
+import /vendor/etc/init/hw/init.coredump.rc
+
+on early-init
+   setprop vendor.all.modules.ready 0
+   write /proc/bootprof "modprobe: Load_Module_START"
+   start insmod_sh
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+    write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
+
+on post-fs-data
+# Update the dm-verity state to partition.*.verified properties
+    verity_update_state
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+    chmod 0660 /dev/mtk_ccd
+    chown system camera /dev/mtk_ccd
+
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+# WiFi
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    #give system access to rfkill device node
+    chmod 0660 /dev/rfkill
+
+# goodix fingerprint
+    mkdir /data/vendor/gf_data 0755 system system
+
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
+    -g@android:wpa_wlan0 -O /data/vendor/wifi/wpa/sockets
+    interface android.hardware.wifi.supplicant@1.0::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.1::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.2::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.3::ISupplicant default
+    interface fireos.hardware.connectivity@1.0::IWifiMiracastConcurrency default
+    socket wpa_wlan0 dgram 660 wifi wifi
+    class main
+    disabled
+    oneshot
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+    export DOWNLOAD_CACHE /cache
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+service insmod_sh /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
+    user root
+    group root system
+    disabled
+    oneshot
+
+# Wireless charging feature flag
+on property:ro.boot.wpc.support=1
+    setprop ro.vendor.wpc.support 1
+
+# Enable charging
+on property:persist.vendor.bcm.disable_charging.enabled=0
+    write /sys/devices/platform/charger/bcm_flag 0
+
+# Disable charging for charge timer timeout
+on property:persist.vendor.bcm.disable_charging.enabled=charge_timer
+    write /sys/devices/platform/charger/bcm_flag charge_timer
+
+# Disable charging for secondary thermal detection is tripped
+on property:persist.vendor.bcm.disable_charging.enabled=secondary_thermal
+    write /sys/devices/platform/charger/bcm_flag secondary_thermal
+
+# charge Top-off mode
+on property:vendor.bcm.pulldown_toc=4250
+    write /sys/devices/platform/charger/top_off_mode 1
+
+on property:vendor.bcm.pulldown_toc=4450
+    write /sys/devices/platform/charger/top_off_mode 0
+
+# charger Demo mode
+on property:sys.battery_charging_cv_level=1
+    write /sys/devices/platform/charger/Custom_Charging_Mode 1
+
+on property:sys.battery_charging_cv_level=0
+    write /sys/devices/platform/charger/Custom_Charging_Mode 0
+
+on boot
+    write /proc/sys/vm/min_free_kbytes 32768
+    write /proc/sys/vm/watermark_boost_factor 0
+
+#LCM
+on property:vendor.hwc.video_mode=1
+    exec /vendor/bin/hw/hidl_aal_client 2
+
+on property:vendor.hwc.video_mode=0
+    exec /vendor/bin/hw/hidl_aal_client 0
+
+#touch gesture wakeup
+on property:vendor.touch_gesture_wakeup=1
+    write /sys/touchscreen/link_input_dev/gesture_wakeup 1
+
+on property:vendor.touch_gesture_wakeup=0
+    write /sys/touchscreen/link_input_dev/gesture_wakeup 0
+
+#amazon thermal hal service
+service amazonthermal-1.0 /vendor/bin/hw/fireos.hardware.amazonthermal@1.0-service
+    class hal
+    user system
+    group system
+    disabled
+    override
+
+service health-hal-2-1 /vendor/bin/hw/android.hardware.health@2.1-service
+    class hal charger
+    user system
+    group system
+    capabilities WAKE_ALARM
+    file /dev/kmsg w
+    disabled
+    override
+
+service vendor.sensors-hal-2-0 /vendor/bin/hw/android.hardware.sensors@2.0-service-mediatek
+    class hal
+    user system
+    group system
+    rlimit rtprio 10 10
+    disabled
+    override
+
+on property:vendor.all.modules.ready=1
+   start amazonthermal-1.0
+   start health-hal-2-1
+   start vendor.sensors-hal-2-0
+   start vendor.fps_hal
+   start camerahalserver
+
+# Override fingerprint service
+service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+    class late_start
+    user system
+    group system input uhid
+    writepid /dev/cpuset/system-background/tasks
+    task_profiles ProcessCapacityHigh MaxPerformance
+    disabled
+    override
+
+service dha_self_test /vendor/bin/amzn_dha_self_test.sh
+    user keystore
+    group keystore drmrpc readproc system
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start dha_self_test
+
+# Enable fingerprint by goodix
+on fs
+    setprop ro.hardware.fingerprint goodix
+
+# Battery Aging
+on property:persist.vendor.bcm.batt_stress=4350
+    write /sys/class/power_supply/mtk-gauge/device/use_aging_zcv 1
+on property:persist.vendor.bcm.batt_stress=4000
+    write /sys/class/power_supply/mtk-gauge/device/use_aging_zcv 2
+
+# Import perfmonitord
+import init.perfmonitord_tablet.rc
