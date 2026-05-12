@@ -1,0 +1,14 @@
+# sunstone-user 11 RS8319.1664N 0021508816896 amz-p,release-keys
+- manufacturer: amazon
+- platform: mt8188
+- codename: sunstone
+- flavor: sunstone-user
+- release: 11
+- id: RS8319.1664N
+- incremental: 0021508817028
+- tags: amz-p,release-keys
+- fingerprint: Amazon/sunstone/sunstone:11/RS8319.1664N/0021508816896:user/amz-p,release-keys
+- is_ab: false
+- brand: Amazon
+- branch: sunstone-user-11-RS8319.1664N-0021508816896-amz-p,release-keys
+- repo: amazon_sunstone_dump
