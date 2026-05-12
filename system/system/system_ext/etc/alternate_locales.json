@@ -1,0 +1,282 @@
+[
+    {
+        "locale" : "af",
+        "fallback" : "af_ZA"
+    },
+    {
+        "locale" : "az",
+        "fallback" : "az_AZ"
+    },
+    {
+        "locale" : "be",
+        "fallback" : "be_BY"
+    },
+    {
+        "locale" : "bg",
+        "fallback" : "bg_BG"
+    },
+    {
+        "locale" : "bs",
+        "fallback" : "bs_BA"
+    },
+    {
+        "locale" : "ca",
+        "fallback" : "ca_ES"
+    },
+    {
+        "locale" : "ceb",
+        "fallback" : "ceb_PH"
+    },
+    {
+        "locale" : "cs",
+        "fallback" : "cs_CZ"
+    },
+    {
+        "locale" : "da",
+        "fallback" : "da_DK"
+    },
+    {
+        "locale" : "de",
+        "fallback" : "de_DE"
+    },
+    {
+        "locale" : "de_CH",
+        "fallback" : "de_DE"
+    },
+    {
+        "locale" : "el",
+        "fallback" : "el_GR"
+    },
+    {
+        "locale" : "en",
+        "fallback" : "en_US"
+    },
+    {
+        "locale" : "en_AU",
+        "fallback" : "en_GB"
+    },
+    {
+        "locale" : "en_IN",
+        "fallback" : "en_GB"
+    },
+    {
+        "locale" : "en_NZ",
+        "fallback" : "en_GB"
+    },
+    {
+        "locale" : "es",
+        "fallback" : "es_ES"
+    },
+    {
+        "locale" : "es_419",
+        "fallback" : "es_MX"
+    },
+    {
+        "locale" : "es_US",
+        "fallback" : "es_MX"
+    },
+    {
+        "locale" : "et",
+        "fallback" : "et_EE"
+    },
+    {
+        "locale" : "eu",
+        "fallback" : "eu_ES"
+    },
+    {
+        "locale" : "fa",
+        "fallback" : "fa_IR"
+    },
+    {
+        "locale" : "fi",
+        "fallback" : "fi_FI"
+    },
+    {
+        "locale" : "fil",
+        "fallback" : "fil_PH"
+    },
+    {
+        "locale" : "fr",
+        "fallback" : "fr_FR"
+    },
+    {
+        "locale" : "fr_BE",
+        "fallback" : "fr_FR"
+    },
+    {
+        "locale" : "fr_CH",
+        "fallback" : "fr_FR"
+    },
+    {
+        "locale" : "ga",
+        "fallback" : "ga_IE"
+    },
+    {
+        "locale" : "gl",
+        "fallback" : "gl_ES"
+    },
+    {
+        "locale" : "he",
+        "fallback" : "he_IL"
+    },
+    {
+        "locale" : "hi",
+        "fallback" : "hi_IN"
+    },
+    {
+        "locale" : "hr",
+        "fallback" : "hr_HR"
+    },
+    {
+        "locale" : "hu",
+        "fallback" : "hu_HU"
+    },
+    {
+        "locale" : "hy",
+        "fallback" : "hy_AM"
+    },
+    {
+        "locale" : "id",
+        "fallback" : "id_ID"
+    },
+    {
+        "locale" : "in",
+        "fallback" : "id_ID"
+    },
+    {
+        "locale" : "is",
+        "fallback" : "is_IS"
+    },
+    {
+        "locale" : "it",
+        "fallback" : "it_IT"
+    },
+    {
+        "locale" : "it_CH",
+        "fallback" : "it_IT"
+    },
+    {
+        "locale" : "iw",
+        "fallback" : "he_IL"
+    },
+    {
+        "locale" : "ja",
+        "fallback" : "ja_JP"
+    },
+    {
+        "locale" : "ka",
+        "fallback" : "ka_GE"
+    },
+    {
+        "locale" : "kk",
+        "fallback" : "kk_KZ"
+    },
+    {
+        "locale" : "ko",
+        "fallback" : "ko_KR"
+    },
+    {
+        "locale" : "lt",
+        "fallback" : "lt_LT"
+    },
+    {
+        "locale" : "lv",
+        "fallback" : "lv_LV"
+    },
+    {
+        "locale" : "mg",
+        "fallback" : "mg_MG"
+    },
+    {
+        "locale" : "mk",
+        "fallback" : "mk_MK"
+    },
+    {
+        "locale" : "mn",
+        "fallback" : "mn_MN"
+    },
+    {
+        "locale" : "ms",
+        "fallback" : "ms_MY"
+    },
+    {
+        "locale" : "ms_BN",
+        "fallback" : "ms_MY"
+    },
+    {
+        "locale" : "nl",
+        "fallback" : "nl_NL"
+    },
+    {
+        "locale" : "pl",
+        "fallback" : "pl_PL"
+    },
+    {
+        "locale" : "pt",
+        "fallback" : "pt_BR"
+    },
+    {
+        "locale" : "ro",
+        "fallback" : "ro_RO"
+    },
+    {
+        "locale" : "ru",
+        "fallback" : "ru_RU"
+    },
+    {
+        "locale" : "sk",
+        "fallback" : "sk_SK"
+    },
+    {
+        "locale" : "sl",
+        "fallback" : "sl_SI"
+    },
+    {
+        "locale" : "sq",
+        "fallback" : "sq_AL"
+    },
+    {
+        "locale" : "sr",
+        "fallback" : "sr_Latn_RS"
+    },
+    {
+        "locale" : "sv",
+        "fallback" : "sv_SE"
+    },
+    {
+        "locale" : "sw",
+        "fallback" : "sw_TZ"
+    },
+    {
+        "locale" : "th",
+        "fallback" : "th_TH"
+    },
+    {
+        "locale" : "tl",
+        "fallback" : "fil_PH"
+    },
+    {
+        "locale" : "tr",
+        "fallback" : "tr_TR"
+    },
+    {
+        "locale" : "tt",
+        "fallback" : "tt_RU"
+    },
+    {
+        "locale" : "uk",
+        "fallback" : "uk_UA"
+    },
+    {
+        "locale" : "ur",
+        "fallback" : "ur_PK"
+    },
+    {
+        "locale" : "vi",
+        "fallback" : "vi_VN"
+    },
+    {
+        "locale" : "zh",
+        "fallback" : "zh_CN"
+    }
+]

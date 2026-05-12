@@ -1,0 +1,8 @@
+service predictivetouchd /system/system_ext/bin/predictivetouchd
+    class main
+    user system
+    group system
+
+on post-fs-data
+    mkdir /data/system/predictivetouchd/ 0770 system system
+    restorecon_recursive /data/system/predictivetouchd

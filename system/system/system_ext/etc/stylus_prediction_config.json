@@ -1,0 +1,38 @@
+{
+  "Pipeline": {
+    "logLevel": "INFO",
+    "QueueFullPolicy": "Block",
+    "cpusetFile": "",
+    "coreaffinity": 7,
+    "enableDataWriting":false,
+    "canControlDataWritingAtRunTime":false,
+    "dataFileDirectory":"/data/securedStorageLocation/stylus_touch_data",
+    "dataFileNameSuffix":"stylus_input_events",
+    "chunkSizeInRecords" : 100,
+    "numChunksInFile" : 100,
+    "diskFillPercentTh" : 30
+  },
+  "PredictionModel": {
+    "model_name": "seq2seq_M12_35_30_5_min17_strokeend_DVT_parts12_splitted_rawp_float32_20230403.tflite",
+    "stroke_end_thres": 0.421066761,
+    "num_predictions": 5,
+    "prediction_time_delta_ms": 4,
+    "num_historical_points": 30,
+    "min_num_historical_points": 12,
+    "pixel_per_inch": 213,
+    "mm_per_inch": 25.4,
+    "feature_timestamp_max": 32.0,
+    "feature_timestamp_min": 2.0,
+    "feature_xpos_max": 17.276680516431927,
+    "feature_xpos_min": -18.3490339342723,
+    "feature_ypos_max": 19.666236197183093,
+    "feature_ypos_min": -19.547032685446002,
+    "feature_pressure_max": 1.0,
+    "feature_pressure_min": 0.0007324219,
+    "feature_tilt_max": 1.3181161,
+    "feature_tilt_min": -1.1566009,
+    "feature_orientation_max": 6.263770300000001,
+    "feature_orientation_min": -6.2647295000000005,
+    "use_raw_pressure": true
+  }
+}

@@ -1,0 +1,11 @@
+service hwrecognitiond /system/system_ext/bin/hwrecognitiond
+    class main
+    user system
+    group system
+
+on post-fs-data
+   mkdir /data/system/hwr 0770 system system
+   mkdir /data/system/hwr/metrics 0770 system system
+   mkdir /data/hwr_assets 0770 system system encryption=None
+   restorecon_recursive /data/system/hwr
+   restorecon_recursive /data/hwr_assets
