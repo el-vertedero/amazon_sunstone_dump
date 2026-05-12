@@ -1,0 +1,64 @@
+# The ueventd here is the increment rules for sunstone
+
+# Sensor node
+/dev/m_acc_misc           0660   system     system
+/dev/m_als_misc           0660   system     system
+
+/sys/class/sensor/m_acc_misc   accenablenodata   0660  system   system
+/sys/class/sensor/m_acc_misc   accactive         0660  system   system
+/sys/class/sensor/m_acc_misc   accdelay          0660  system   system
+/sys/class/sensor/m_acc_misc   accbatch          0660  system   system
+/sys/class/sensor/m_acc_misc   accflush          0660  system   system
+/sys/class/sensor/m_acc_misc   acccali           0660  system   system
+/sys/class/sensor/m_als_misc   alsactive         0660  system   system
+/sys/class/sensor/m_als_misc   alsdelay          0660  system   system
+/sys/class/sensor/m_als_misc   alsbatch          0660  system   system
+/sys/class/sensor/m_als_misc   alsflush          0660  system   system
+/sys/class/sensor/m_als_misc   alscali           0660  system   system
+
+# Camera
+/dev/mtk_ccd              0660   system     camera
+
+# goodix_fp
+/dev/goodix_fp            0660   system     system
+
+# Thermal
+/sys/devices/virtual/thermal/thermal_zone* mode 0660  system system
+/sys/devices/virtual/thermal/thermal_zone* trips 0660  system system
+/sys/devices/virtual/thermal/thermal_zone* policy 0660  system system
+/sys/devices/virtual/thermal/thermal_zone* polling 0660  system system
+/sys/devices/virtual/thermal/thermal_zone* cdevs 0660  system system
+/sys/devices/virtual/thermal/cooling_device* cur_state 0660 system system
+/sys/devices/virtual/thermal/cooling_device* levels 0660 system system
+
+/sys/devices/virtual/thermal/thermal_zone* trip_point_0_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_0_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_1_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_1_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_2_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_2_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_3_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_3_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_4_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_4_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_5_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_5_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_6_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_6_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_7_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_7_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_8_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_8_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_9_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_9_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_10_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_10_hyst 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_11_temp 0660 system system
+/sys/devices/virtual/thermal/thermal_zone* trip_point_11_hyst 0660 system system
+
+# WIFI
+/dev/connsys_wifi         0660   wifi     wifi
+# BTLE MIC
+/dev/bleremote_audio      0660   system     audio
+
+/dev/connsys_bt    0660    bluetooth    bluetooth
