@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <card name="mt8188sound" />
+    <mixercontrol>
+        <versioncontrol value="1.01">
+        </versioncontrol>
+        <!-- "kctl name" are the initial mixer settings -->
+        <!-- <kctl name="XXXX" value="XXXX" /> -->
+        <!--headphone output-->
+        <path name="headphone_output" value="turnon">
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="HP Mux" value="Audio Playback" />
+            <kctl name="Ext Headphone Amp Switch" value="1" />
+        </path>
+        <path name="headphone_output" value="turnoff">
+            <kctl name="HP Mux" value="Open" />
+            <kctl name="Ext Headphone Amp Switch" value="0" />
+        </path>
+       <!--speaker output-->
+        <path name="speaker_output" value="turnon">
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="HP Mux" value="Audio Playback" />
+            <kctl name="Ext Spk Amp Switch" value="1" />
+        </path>
+        <path name="speaker_output" value="turnoff">
+            <kctl name="HP Mux" value="Open" />
+            <kctl name="Ext Spk Amp Switch" value="0" />
+        </path>
+        <!--headhpone_speaker output-->
+        <path name="headphoneSpeaker_output" value="turnon">
+            <kctl name="DAC In Mux" value="Normal Path" />
+            <kctl name="HP Mux" value="Audio Playback" />
+            <kctl name="Ext Spk Amp Switch" value="1" />
+            <kctl name="Ext Headphone Amp Switch" value="1" />
+        </path>
+        <path name="headphoneSpeaker_output" value="turnoff">
+            <kctl name="HP Mux" value="Open" />
+            <kctl name="Ext Spk Amp Switch" value="0" />
+            <kctl name="Ext Headphone Amp Switch" value="0" />
+        </path>
+        <!--mic setting-->
+        <path name="builtin_Mic_Mic1" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA0" />
+        </path>
+        <path name="builtin_Mic_Mic1" value="turnoff">
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_DMic1" value="turnon">
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA1_L_1" />
+        </path>
+        <path name="builtin_Mic_DMic1" value="turnoff">
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_Mic1_Inverse" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH2" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_R_Mux" value="Right Preamplifier" />
+            <kctl name="PGA_R_Mux" value="AIN2" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA1_L_1" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA1_L_1" />
+        </path>
+        <path name="builtin_Mic_Mic1_Inverse" value="turnoff">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_Mic2" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH2" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_R_Mux" value="Right Preamplifier" />
+            <kctl name="PGA_R_Mux" value="AIN2" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA1_R" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA1_R" />
+        </path>
+        <path name="builtin_Mic_Mic2" value="turnoff">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_DMic2" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA1_L_1" />
+        </path>
+        <path name="builtin_Mic_DMic2" value="turnoff">
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_Mic2_Inverse" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA0" />
+        </path>
+        <path name="builtin_Mic_Mic2_Inverse" value="turnoff">
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_SingleMic" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA0" />
+        </path>
+        <path name="builtin_Mic_SingleMic" value="turnoff">
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_DualMic" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="ADC_R_Mux" value="Right Preamplifier" />
+            <kctl name="PGA_R_Mux" value="AIN2" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA1_L_1" />
+        </path>
+        <path name="builtin_Mic_DualMic" value="turnoff">
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_DualMic_Inverse" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH2" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="ADC_R_Mux" value="Right Preamplifier" />
+            <kctl name="PGA_R_Mux" value="AIN2" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA1_L_1" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA0" />
+        </path>
+        <path name="builtin_Mic_DualMic_Inverse" value="turnoff">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_BackMic" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH2" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="ADC_R_Mux" value="Right Preamplifier" />
+            <kctl name="PGA_R_Mux" value="AIN2" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA1_L_1" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA0" />
+        </path>
+        <path name="builtin_Mic_BackMic" value="turnoff">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="builtin_Mic_BackMic_Inverse" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN0" />
+            <kctl name="ADC_R_Mux" value="Right Preamplifier" />
+            <kctl name="PGA_R_Mux" value="AIN2" />
+            <kctl name="DMIC0_MUX" value="DMIC_DATA0" />
+            <kctl name="DMIC1_MUX" value="DMIC_DATA1_L_1" />
+        </path>
+        <path name="builtin_Mic_BackMic_Inverse" value="turnoff">
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+        </path>
+        <path name="headset_mic_input" value="turnon">
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH1" />
+            <kctl name="ADC_L_Mux" value="Left Preamplifier" />
+            <kctl name="PGA_L_Mux" value="AIN1" />
+        </path>
+        <path name="headset_mic_input" value="turnoff">
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+        </path>
+        <!--ADDA playback setting-->
+        <path name="PLAYBACK_DL2_TO_ADDA_DL" value="turnon">
+            <kctl name="O176 I070 Switch" value="1" />
+            <kctl name="O177 I071 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL2_TO_ADDA_DL" value="turnoff">
+            <kctl name="O176 I070 Switch" value="0" />
+            <kctl name="O177 I071 Switch" value="0" />
+        </path>
+        <path name="PLAYBACK_DL3_TO_ADDA_DL" value="turnon">
+            <kctl name="O176 I020 Switch" value="1" />
+            <kctl name="O177 I021 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL3_TO_ADDA_DL" value="turnoff">
+            <kctl name="O176 I020 Switch" value="0" />
+            <kctl name="O177 I021 Switch" value="0" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_ADDA_DL" value="turnon">
+            <kctl name="O176 I000 Switch" value="1" />
+            <kctl name="O177 I001 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_ADDA_DL" value="turnoff">
+            <kctl name="O176 I000 Switch" value="0" />
+            <kctl name="O177 I001 Switch" value="0" />
+        </path>
+        <path name="PLAYBACK_DL11_TO_ADDA_DL" value="turnon">
+            <kctl name="O176 I022 Switch" value="1" />
+            <kctl name="O177 I023 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL11_TO_ADDA_DL" value="turnoff">
+            <kctl name="O176 I022 Switch" value="0" />
+            <kctl name="O177 I023 Switch" value="0" />
+        </path>
+        <!--ADDA capture setting-->
+        <path name="CAPTURE_UL4_FROM_ADDA" value="turnon">
+            <kctl name="O034 I168 Switch" value="1" />
+            <kctl name="O035 I169 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL4_FROM_ADDA" value="turnoff">
+            <kctl name="O034 I168 Switch" value="0" />
+            <kctl name="O035 I169 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL9_FROM_ADDA" value="turnon">
+            <kctl name="O002 I168 Switch" value="1" />
+            <kctl name="O003 I169 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL9_FROM_ADDA" value="turnoff">
+            <kctl name="O002 I168 Switch" value="0" />
+            <kctl name="O003 I169 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL10_FROM_ADDA" value="turnon">
+            <kctl name="O038 I168 Switch" value="1" />
+            <kctl name="O039 I169 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL10_FROM_ADDA" value="turnoff">
+            <kctl name="O038 I168 Switch" value="0" />
+            <kctl name="O039 I169 Switch" value="0" />
+        </path>
+        <!--AP DMIC capture setting-->
+        <path name="CAPTURE_UL9_FROM_AP_DMIC" value="turnon">
+            <kctl name="O002 I004 Switch" value="1" />
+            <kctl name="O003 I005 Switch" value="1" />
+            <kctl name="O004 I006 Switch" value="1" />
+            <kctl name="O005 I007 Switch" value="1" />
+            <kctl name="O006 I008 Switch" value="1" />
+            <kctl name="O007 I009 Switch" value="1" />
+            <kctl name="O008 I010 Switch" value="1" />
+            <kctl name="O009 I011 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL9_FROM_AP_DMIC" value="turnoff">
+            <kctl name="O002 I004 Switch" value="0" />
+            <kctl name="O003 I005 Switch" value="0" />
+            <kctl name="O004 I006 Switch" value="0" />
+            <kctl name="O005 I007 Switch" value="0" />
+            <kctl name="O006 I008 Switch" value="0" />
+            <kctl name="O007 I009 Switch" value="0" />
+            <kctl name="O008 I010 Switch" value="0" />
+            <kctl name="O009 I011 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL10_FROM_AP_DMIC" value="turnon">
+            <kctl name="O038 I004 Switch" value="1" />
+            <kctl name="O039 I005 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL10_FROM_AP_DMIC" value="turnoff">
+            <kctl name="O038 I004 Switch" value="0" />
+            <kctl name="O039 I005 Switch" value="0" />
+        </path>
+        <!--DSP DMIC capture setting-->
+        <path name="CAPTURE_UL9_FROM_DSP_DMIC" value="turnon">
+            <kctl name="VA_IN Mux" value="UL9_IN" />
+            <kctl name="VA_IN_IO Mux" value="UL9_IO" />
+            <kctl name="O002 I004 Switch" value="1" />
+            <kctl name="O003 I005 Switch" value="1" />
+            <kctl name="O004 I006 Switch" value="1" />
+            <kctl name="O005 I007 Switch" value="1" />
+            <kctl name="O006 I008 Switch" value="1" />
+            <kctl name="O007 I009 Switch" value="1" />
+            <kctl name="O008 I010 Switch" value="1" />
+            <kctl name="O009 I011 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL9_FROM_DSP_DMIC" value="turnoff">
+            <kctl name="O002 I004 Switch" value="0" />
+            <kctl name="O003 I005 Switch" value="0" />
+            <kctl name="O004 I006 Switch" value="0" />
+            <kctl name="O005 I007 Switch" value="0" />
+            <kctl name="O006 I008 Switch" value="0" />
+            <kctl name="O007 I009 Switch" value="0" />
+            <kctl name="O008 I010 Switch" value="0" />
+            <kctl name="O009 I011 Switch" value="0" />
+            <kctl name="VA_IN Mux" value="OPEN" />
+            <kctl name="VA_IN_IO Mux" value="OPEN" />
+        </path>
+        <!-- PCMIF playback setting-->
+        <path name="PLAYBACK_DL2_TO_PCMIF_TX" value="turnon">
+            <kctl name="O000 I070 Switch" value="1" />
+            <kctl name="O001 I071 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL2_TO_PCMIF_TX" value="turnoff">
+            <kctl name="O000 I070 Switch" value="0" />
+            <kctl name="O001 I071 Switch" value="0" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_PCMIF_TX" value="turnon">
+            <kctl name="O000 I000 Switch" value="1" />
+            <kctl name="O001 I001 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_PCMIF_TX" value="turnoff">
+            <kctl name="O000 I000 Switch" value="0" />
+            <kctl name="O001 I001 Switch" value="0" />
+        </path>
+        <!-- PCMIF capture setting-->
+        <path name="CAPTURE_UL2_FROM_PCMIF_RX" value="turnon">
+            <kctl name="O040 I002 Switch" value="1" />
+            <kctl name="O041 I003 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL2_FROM_PCMIF_RX" value="turnoff">
+            <kctl name="O040 I002 Switch" value="0" />
+            <kctl name="O041 I003 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL4_FROM_PCMIF_RX" value="turnon">
+            <kctl name="O034 I002 Switch" value="1" />
+            <kctl name="O035 I003 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL4_FROM_PCMIF_RX" value="turnoff">
+            <kctl name="O034 I002 Switch" value="0" />
+            <kctl name="O035 I003 Switch" value="0" />
+        </path>
+        <!-- echo ref capture setting-->
+        <path name="CAPTURE_UL5_FROM_DL2_GASRC0" value="turnon">
+            <kctl name="O096 I070 Switch" value="1" />
+            <kctl name="O097 I071 Switch" value="1" />
+            <kctl name="O036 I096 Switch" value="1" />
+            <kctl name="O037 I097 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL2_GASRC0" value="turnoff">
+            <kctl name="O096 I070 Switch" value="0" />
+            <kctl name="O097 I071 Switch" value="0" />
+            <kctl name="O036 I096 Switch" value="0" />
+            <kctl name="O037 I097 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL3_GASRC0" value="turnon">
+            <kctl name="O096 I020 Switch" value="1" />
+            <kctl name="O097 I021 Switch" value="1" />
+            <kctl name="O036 I096 Switch" value="1" />
+            <kctl name="O037 I097 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL3_GASRC0" value="turnoff">
+            <kctl name="O096 I020 Switch" value="0" />
+            <kctl name="O097 I021 Switch" value="0" />
+            <kctl name="O036 I096 Switch" value="0" />
+            <kctl name="O037 I097 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL6" value="turnon">
+            <kctl name="O036 I000 Switch" value="1" />
+            <kctl name="O037 I001 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL6" value="turnoff">
+            <kctl name="O036 I000 Switch" value="0" />
+            <kctl name="O037 I001 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL11_GASRC0" value="turnon">
+            <kctl name="O096 I022 Switch" value="1" />
+            <kctl name="O097 I023 Switch" value="1" />
+            <kctl name="O036 I096 Switch" value="1" />
+            <kctl name="O037 I097 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL5_FROM_DL11_GASRC0" value="turnoff">
+            <kctl name="O096 I022 Switch" value="0" />
+            <kctl name="O097 I023 Switch" value="0" />
+            <kctl name="O036 I096 Switch" value="0" />
+            <kctl name="O037 I097 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL10_ECHOREF_FROM_DL3" value="turnon">
+            <kctl name="O182 I020 Switch" value="1" />
+            <kctl name="O183 I021 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL10_ECHOREF_FROM_DL3" value="turnoff">
+            <kctl name="O182 I020 Switch" value="0" />
+            <kctl name="O183 I021 Switch" value="0" />
+        </path>
+        <path name="CAPTURE_UL10_ECHOREF_FROM_DL11" value="turnon">
+            <kctl name="O182 I022 Switch" value="1" />
+            <kctl name="O183 I023 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL10_ECHOREF_FROM_DL11" value="turnoff">
+            <kctl name="O182 I022 Switch" value="0" />
+            <kctl name="O183 I023 Switch" value="0" />
+        </path>
+        <!-- I2SO1 playback setting-->
+        <path name="PLAYBACK_DL2_TO_I2SO1" value="turnon">
+            <kctl name="ETDM_OUT1_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O072 I070 Switch" value="1" />
+            <kctl name="O073 I071 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL2_TO_I2SO1" value="turnoff">
+            <kctl name="O072 I070 Switch" value="0" />
+            <kctl name="O073 I071 Switch" value="0" />
+            <kctl name="ETDM_OUT1_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_DL3_TO_I2SO1" value="turnon">
+            <kctl name="ETDM_OUT1_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O072 I020 Switch" value="1" />
+            <kctl name="O073 I021 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL3_TO_I2SO1" value="turnoff">
+            <kctl name="O072 I020 Switch" value="0" />
+            <kctl name="O073 I021 Switch" value="0" />
+            <kctl name="ETDM_OUT1_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_I2SO1" value="turnon">
+            <kctl name="ETDM_OUT1_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O072 I000 Switch" value="1" />
+            <kctl name="O073 I001 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_I2SO1" value="turnoff">
+            <kctl name="O072 I000 Switch" value="0" />
+            <kctl name="O073 I001 Switch" value="0" />
+            <kctl name="ETDM_OUT1_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_DL11_TO_I2SO1" value="turnon">
+            <kctl name="ETDM_OUT1_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O072 I022 Switch" value="1" />
+            <kctl name="O073 I023 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL11_TO_I2SO1" value="turnoff">
+            <kctl name="O072 I022 Switch" value="0" />
+            <kctl name="O073 I023 Switch" value="0" />
+            <kctl name="ETDM_OUT1_Clock_Source" value="26m" />
+        </path>
+        <!-- I2SO2 playback setting-->
+        <path name="PLAYBACK_DL2_TO_I2SO2" value="turnon">
+            <kctl name="ETDM_OUT2_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O048 I070 Switch" value="1" />
+            <kctl name="O049 I071 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL2_TO_I2SO2" value="turnoff">
+            <kctl name="O048 I070 Switch" value="0" />
+            <kctl name="O049 I071 Switch" value="0" />
+            <kctl name="ETDM_OUT2_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_DL3_TO_I2SO2" value="turnon">
+            <kctl name="ETDM_OUT2_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O048 I020 Switch" value="1" />
+            <kctl name="O049 I021 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL3_TO_I2SO2" value="turnoff">
+            <kctl name="O048 I020 Switch" value="0" />
+            <kctl name="O049 I021 Switch" value="0" />
+            <kctl name="ETDM_OUT2_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_I2SO2" value="turnon">
+            <kctl name="ETDM_OUT2_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O048 I000 Switch" value="1" />
+            <kctl name="O049 I001 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL6_TO_I2SO2" value="turnoff">
+            <kctl name="O048 I000 Switch" value="0" />
+            <kctl name="O049 I001 Switch" value="0" />
+            <kctl name="ETDM_OUT2_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_DL11_TO_I2SO2" value="turnon">
+            <kctl name="ETDM_OUT2_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O048 I022 Switch" value="1" />
+            <kctl name="O049 I023 Switch" value="1" />
+        </path>
+        <path name="PLAYBACK_DL11_TO_I2SO2" value="turnoff">
+            <kctl name="O048 I022 Switch" value="0" />
+            <kctl name="O049 I023 Switch" value="0" />
+            <kctl name="ETDM_OUT2_Clock_Source" value="26m" />
+        </path>
+        <!-- I2SIN capture setting-->
+        <path name="CAPTURE_UL2_FROM_I2SIN" value="turnon">
+            <kctl name="ETDM_IN2_Clock_Source" value="a1sys_a2sys" />
+            <kctl name="O040 I012 Switch" value="1" />
+            <kctl name="O041 I013 Switch" value="1" />
+        </path>
+        <path name="CAPTURE_UL2_FROM_I2SIN" value="turnoff">
+            <kctl name="O040 I012 Switch" value="0" />
+            <kctl name="O041 I013 Switch" value="0" />
+            <kctl name="ETDM_IN2_Clock_Source" value="26m" />
+        </path>
+        <path name="reset_device_setting" value="setting">
+            <kctl name="LOL Mux" value="Open" />
+            <kctl name="HP Mux" value="Open" />
+            <kctl name="RCV Mux" value="Open" />
+            <kctl name="ADC_L_Mux" value="Idle" />
+            <kctl name="ADC_R_Mux" value="Idle" />
+            <kctl name="ADC_3_Mux" value="Idle" />
+            <kctl name="PGA_L_Mux" value="None" />
+            <kctl name="PGA_R_Mux" value="None" />
+            <kctl name="PGA_3_Mux" value="None" />
+            <kctl name="MISO0_MUX" value="UL1_CH1" />
+            <kctl name="MISO1_MUX" value="UL1_CH2" />
+            <kctl name="UL_SRC_MUX" value="AMIC" />
+            <kctl name="MULTI_IN1_MUX" value="HDMI_RX_I2S" />
+            <kctl name="MULTI_IN2_MUX" value="EARC_RX_INT" />
+        </path>
+        <path name="HDMI_TDM_OUT" value="turnon">
+            <kctl name="HDMI_OUT_MUX" value="Connect" />
+            <kctl name="ETDM_OUT3_Clock_Source" value="a1sys_a2sys" />
+        </path>
+        <path name="HDMI_TDM_OUT" value="turnoff">
+            <kctl name="HDMI_OUT_MUX" value="Disconnect" />
+            <kctl name="ETDM_OUT3_Clock_Source" value="26m" />
+        </path>
+        <path name="DPTX_TDM_OUT" value="turnon">
+            <kctl name="DPTX_OUT_MUX" value="Connect" />
+            <kctl name="ETDM_OUT3_Clock_Source" value="a1sys_a2sys" />
+        </path>
+        <path name="DPTX_TDM_OUT" value="turnoff">
+            <kctl name="DPTX_OUT_MUX" value="Disconnect" />
+            <kctl name="ETDM_OUT3_Clock_Source" value="26m" />
+        </path>
+        <path name="PLAYBACK_TO_TDM_2CH" value="setting">
+            <kctl name="HDMI_CH0_MUX" value="CH0" />
+            <kctl name="HDMI_CH1_MUX" value="CH1" />
+        </path>
+        <path name="PLAYBACK_TO_TDM_4CH" value="setting">
+            <kctl name="HDMI_CH0_MUX" value="CH0" />
+            <kctl name="HDMI_CH1_MUX" value="CH1" />
+            <kctl name="HDMI_CH2_MUX" value="CH2" />
+            <kctl name="HDMI_CH3_MUX" value="CH3" />
+        </path>
+        <path name="PLAYBACK_TO_TDM_6CH" value="setting">
+            <kctl name="HDMI_CH0_MUX" value="CH0" />
+            <kctl name="HDMI_CH1_MUX" value="CH1" />
+            <kctl name="HDMI_CH2_MUX" value="CH2" />
+            <kctl name="HDMI_CH3_MUX" value="CH3" />
+            <kctl name="HDMI_CH4_MUX" value="CH4" />
+            <kctl name="HDMI_CH5_MUX" value="CH5" />
+        </path>
+        <path name="PLAYBACK_TO_TDM_8CH" value="setting">
+            <kctl name="HDMI_CH0_MUX" value="CH0" />
+            <kctl name="HDMI_CH1_MUX" value="CH1" />
+            <kctl name="HDMI_CH2_MUX" value="CH2" />
+            <kctl name="HDMI_CH3_MUX" value="CH3" />
+            <kctl name="HDMI_CH4_MUX" value="CH4" />
+            <kctl name="HDMI_CH5_MUX" value="CH5" />
+            <kctl name="HDMI_CH6_MUX" value="CH6" />
+            <kctl name="HDMI_CH7_MUX" value="CH7" />
+        </path>
+        <!-- HDMI Codec coding type setting-->
+        <path name="HDMI_CODEC_CODE_TYPE_PCM" value="setting">
+            <kctl name="HDMI_CODEC_CODE_TYPE" value="1" />
+        </path>
+        <path name="HDMI_CODEC_CODE_TYPE_AC3" value="setting">
+            <kctl name="HDMI_CODEC_CODE_TYPE" value="2" />
+        </path>
+        <path name="HDMI_CODEC_CODE_TYPE_EAC3" value="setting">
+            <kctl name="HDMI_CODEC_CODE_TYPE" value="10" />
+        </path>
+        <path name="HDMI_CODEC_CODE_TYPE_DTS_HD" value="setting">
+            <kctl name="HDMI_CODEC_CODE_TYPE" value="11" />
+        </path>
+        <path name="HDMI_CODEC_CODE_TYPE_MLP" value="setting">
+            <kctl name="HDMI_CODEC_CODE_TYPE" value="12" />
+        </path>
+    </mixercontrol>
+</root>

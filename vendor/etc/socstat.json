@@ -1,0 +1,84 @@
+{
+  "model_name": "Sunstone",
+  "devfreq_devices": [
+    {
+      "name": "GPU",
+      "path": "/sys/class/devfreq/13000000.mali"
+    }
+  ],
+  "hwmon_sensors": [
+    {
+      "name": "batt",
+      "type": "current",
+      "path": "/sys/class/hwmon/hwmon1/curr1_input"
+    },
+    {
+      "name": "batt",
+      "type": "temp",
+      "path": "/sys/class/hwmon/hwmon1/temp1_input"
+    },
+    {
+      "name": "cpu_little",
+      "type": "temp",
+      "path": "/sys/class/hwmon/hwmon13/temp1_input"
+    },
+    {
+      "name": "cpu_big",
+      "type": "temp",
+      "path": "/sys/class/hwmon/hwmon18/temp1_input"
+    },
+    {
+      "name": "gpu",
+      "type": "temp",
+      "path": "/sys/class/hwmon/hwmon20/temp1_input"
+    },
+    {
+      "name": "pmic",
+      "type": "temp",
+      "path": "/sys/class/hwmon/hwmon27/temp1_input"
+    },
+    {
+      "name": "pm6365_ntc",
+      "type": "temp",
+      "path": "/sys/class/hwmon/hwmon33/temp1_input"
+    }
+  ],
+  "pmu_devices": [
+    {
+      "path": "/sys/devices/arm_dsu_0",
+      "display_name": "arm_dsu_0",
+      "pmu_events": [
+        {
+          "event": "l3d_cache",
+          "name": "cache_acces",
+          "convert_to_mb": false,
+          "max_value": 200000000
+        },
+        {
+          "event": "l3d_cache_allocate",
+          "name": "cache_alloc",
+          "convert_to_mb": false,
+          "max_value": 200000000
+        },
+        {
+          "event": "l3d_cache_refill",
+          "name": "cache_refil",
+          "convert_to_mb": false,
+          "max_value": 200000000
+        },
+        {
+          "event": "l3d_cache_wb",
+          "name": "cache_wr_bk",
+          "convert_to_mb": false,
+          "max_value": 200000000
+        },
+        {
+          "event": "bus_access",
+          "name": "bus_access",
+          "convert_to_mb": false,
+          "max_value": 200000000
+        }
+      ]
+    }
+  ]
+}

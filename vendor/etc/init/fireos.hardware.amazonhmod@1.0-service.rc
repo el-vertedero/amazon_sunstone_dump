@@ -1,0 +1,4 @@
+service amazonhmod-1.0 /vendor/bin/hw/fireos.hardware.amazonhmod@1.0-service
+    class hal
+    user system
+    group system
