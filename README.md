@@ -1,0 +1,14 @@
+# sunstone-user 11 RS8338.3339N 0030132734720 amz-p,release-keys
+- manufacturer: amazon
+- platform: mt8188
+- codename: sunstone
+- flavor: sunstone-user
+- release: 11
+- id: RS8338.3339N
+- incremental: 0030132734852
+- tags: amz-p,release-keys
+- fingerprint: Amazon/sunstone/sunstone:11/RS8338.3339N/0030132734720:user/amz-p,release-keys
+- is_ab: false
+- brand: Amazon
+- branch: sunstone-user-11-RS8338.3339N-0030132734720-amz-p,release-keys
+- repo: amazon_sunstone_dump
